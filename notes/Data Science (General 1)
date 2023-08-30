@@ -1,0 +1,160 @@
+Parts of Data Science
+Stats Coding: R and Python
+Database: SQL
+Command Line: Bash
+Search: REGEX
+
+Math: probability, algebra, regression
+Necessary to be able to choose procedures that fit the data; diagnose problems
+
+Domain expertise:
+goals, methods and constraints
+
+ML:
+learn black box models
+unstructured
+note for me, want to learn time series analysis
+
+Steps:
+1. Define Goals
+2. Organize resources
+3. Coordinate people
+4. Schedule Project
+5. Get the data
+6. Clean data
+7. Explore data
+8. Refine data choose variables or cases to include/exclude
+9. Create model
+10. Validate model, e.g. hold out validation, or model replication
+11. Evaluate model, meaning, how much does it tell me
+12. Refine model, include or exclude other variables
+13. Present model
+14. Deploy model
+15. Revisit model - over time or just in a 
+16. Archive assets to be able to re-evaluate it or return to it
+
+People in this field
+Engineer:back-end hardware, software -> Developer, DBA
+Big Data: comp sci and math, ML, data products
+Researcher: domain specific, strong stats
+Analyst: day-to-day business tasks, e.g. web analytics, SQL queries
+Business: frame relevant questions, manage projects
+Entrepreneurs: startups, creatives
+Full-stack "unicorns" all of the above
+
+Ethical Concerns in DS:
+1. Privacy -> confidential information, e.g. SSNs, or just shouldn't share
+2. Anonymity -> may not not hard to identify, e.g. prior to HIPAA or proprietary data
+3. Copyright -> scraping data is common and useful but may not be ok
+4. Security -> hackers may want it, especially if it's not anonymous
+5. Potential bias -> only as neutral and bias free as rules and data received
+6. Overconfidence
+
+Need math:
+1. which procedures to use and why
+2. what to do when things aren't working correctly; e.g. negative adjusted r^2 can happen but not supposed to, need to know what would cause it
+4. some math is easier/quicker to do by hand
+  - (linear) algebra
+  - systems of equations
+  - calculus
+  - Big O
+  - probability theory
+  - Bayes' theorem
+  
+Exploratory: graphics/visualizations, stats (and descriptive) visualizations
+Inference: from samples to populations; hypothesis testing; estimation
+Details: feature selection, problems, validation, estimators, fit
+
+Machine Learning:
+reduce dimensionality - find most essential portions of the data
+clustering, k-means, anamolies
+- Logistic Regression
+- kNN
+- Naive Bayes
+- Decision Trees
+- Support Vector Machines (SVM)
+- Artificial Neural Nets
+Predictions:
+- Linear Regression
+- Poisson Regresion
+- Ensemble Models
+
+
+Communication:
+Presenting:
+- State the question
+- Give the answer
+- Qualify were required
+- Go in order
+- Discuss process sparingly (overwhelming for the client)
+Mind these things:
+- more charts 
+- less text
+- simple charts
+- avoid tables (difficult to read)
+
+Simpson's Paradox
+- presenting as biased overall but is negligible at a lower level
+
+Actionable Items:
+- give next steps
+- justify with data
+- be specific
+- make sure they're doable
+- build on each step
+
+Correlation v Causation?
+experimental study
+quasi-experiment
+research based theory and doman-specific information (the client could be helpful here)
+
+
+Graphics Types:
+Exploratory
+    for the analyst insight
+    centering speed and responsiveness
+    tend to be simple for the above reason
+Presentation
+    for the client
+    centering clarity and narrative flow
+    colors, 3D, interaction, animation could be very distracting
+    
+Creating narrative structure is important to help them follow
+
+Reproducible- need to be able to do it again because changes are incremental, cumulative and adaptive
+Show work
+    may need to revise the work
+    may want to borrow something from this analysis
+    may need to hand it off to someone else
+    need to be able show that one was responsible and conclusions were reasonable
+
+Making methods transparent
+    ODSC.com
+    OSF.io
+    j.mp/aps-op
+Also want to archive: all datasets, raw and processed; code for process and analyse data, liberal commenting of process
+Process: explain why in that way, so choices, consequences, backtracking that was necessary
+Storing:
+    save data in non-proprietary forms like CSV
+    place in secure acessible places like GitHub
+    have some form of dependency management like packrat for R or virtualenv for Python
+    
+For notes: jupyter for Python, RMarkdown for R -> RPubs to share it (both of which I've used)
+Want to support collab, future proof the work and share the narrative
+
+Conferences to get involved with:
+O'Reilly Strata
+Predictive Analytics World
+Tapestry Conference
+Extract by import.io
+
+Others:
+Kaggle for competitions and compare to others
+DataKind.org work with local non-profits to help out
+
+
+Notes for me:
+- review REGEX, it's been a while for me
+- time series analysis as a skill
+- Known: R, SQL, Python, Excel, Tableau
+- Potential investment: RapidMiner, KNIME, Hadoop, SAS, Spark?

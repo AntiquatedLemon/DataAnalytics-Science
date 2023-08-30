@@ -1,0 +1,160 @@
+Data opus and sourcing
+
+Methods for measuring and evaluating data
+    Metrics
+    want to know what the target is to be able to hit it
+    definte success in the goal, e.g. commerce increased sales
+    Metrics
+        Business metrics
+            sales revenue
+            lead generation
+            customer value
+            churn rate (customer turnover)
+        Key Performance Indicators (KPIs)
+            non-financial: overall productivity
+            timely: keep gathering data on these from daily, weekly, etc perspective
+            CEO focus: senior management usually make decisions that affect this
+            simple: everyone in the org understands and can abide by them
+            team-based: joint responsibility for meeting the goal
+            significant impact: affect 2+ things, e.g. production time and defects
+            limited dark side: don't reinforce the wrong behavior or encourage going aroung 
+        SMART goals
+            Specific
+            Measurable
+            Assignable: a particular person
+            Realistic: can be met within the constraints of available resources
+            Time-bound: when it will be done
+        Multiple goals - need to optimize to find a balance to complete all goals or if they conflict e.g. money saved from turning down a questionable sale v customer happiness or acquiesing to the customer's demands to avoid losing their business v when what they want will be a loss to the business
+    Accuracy
+        Classification tables
+                        Event Present      Event Absent          Total
+        Test positive        TP                 FP               T. P
+        Test negative        FN                 TN               T. N
+                          T. Present        T. Absent            Total
+       
+    Sensitivity = TP/T. Present; if there is a pregnancy, is it captured? (want always)
+    Specificity = TN/T. Absent; if there is not a pregnancy, is it not captured? (wanted)
+    Positive Predictive Value = TP/T.P if it was captured, was there a pregnancy?
+    Negative Predictive Value = TN/ T.N if there is no capture, was there, in fact, no pregnancy
+    maximize these as much as possible
+    
+    Things to be aware of social context of the recommendation:
+        try not to make recommendations against the business model (a threat to the core)
+        restrictions: laws, policies, common practices which would limit ability to meet the goal
+        there's external competetion yes, but internal competition - a recommendation may forward one person's career and be detrimental to another's; so office politics
+        manipulation: any system will be gamed if possible especially if there's incentives tied to certain metrics 
+Methods for accessing existing data
+    ideal
+    data types:
+        in-house: proprietary
+            pro: fast, easy, formatted according to the system, the original team may be there, might have identifiers for indivisual cases
+            cons: may not have good documentation or quality control or restricted when trying to share
+        open data: public
+            prepared, 
+            govt, corporate, scientific sources
+            some sources: 
+                data.gov 
+                state.gov
+                open-data.europa.eu
+                unicef.org/statistics
+                who.int/gho
+                pewinternet.org/datasets
+                developer.nytimes.com (can also use APIs to access their data)
+                google.com/publicdata, aws.amazon.com/datasets (like 5 TB)
+            pro: valuable, wide topic/time/group range, well-formated and documented
+            cons: biased samples, meaning isn't clea, need to share well that was open data used in proprietary setting it would have to be open research instead, issues with privacy/confidentiality (larger aggregated level since identifiers aren't there)
+        third-party: purchased
+            Data-as-a-Service (DaaS)
+            Data brokers
+            Many topics
+            May also process some of the data for you
+            sources:
+                acxiom.com (marketing)
+                nielsen.com (media consumption)
+                datasift.com
+            pro: save time and effort, can get very individual level info, summaries and inferences
+            cons: distasteful to many people, can be expensive, still need to validate to make sure it means what you think it means
+            
+    APIs, REST API (I know this, I'm not making notes on how this happens)
+    Social APIs - Facebook, Twitter, Google Talk, FourSquare, SoundCloud
+    Visual APIs - Google Maps, YouTube, AccuWeather, Pinterest, Flickr
+    R, Python, Bash, or whatever
+    
+    Another way: scraping
+    html text/tables, pdfs, medias
+    copyright and privacy
+    can use apps for this: import.io, ScraperWiki, Tabula, Google Sheets, Excel
+    can code the scraper: R, Python, Bash, Java, PHP
+Methods for creating new, custom data
+    Role: Passive (observing whats already happening)? Active (creating the situation)?
+    Q/Q: Quantitative? Qualitative?
+    How: Online? In person?
+    Types: Interviews, Surveys, Card sorting, Experiments
+    Experiment Types:
+        Lab: in-person, shape info and experience
+        A/B testing: automated online testing of two or more variations on a webpage
+    Interview:
+        new topic, don't know how they might react
+        new audience
+        need to find ways to improve
+        don't want constrained responses
+        structured:
+            predetermined set of questions, same questions, same order
+        unstructured:
+            conversational, questions arise to different answers, different for each person
+        in-person, phone, online
+        Considerations:
+            time: minutes to hours/person
+            training: that's a special skill
+            analysis: looking for themes to create categories for answers
+         learn things never expected
+     Card Sorting:
+         looking for a sense of mental models; how to people organize info intuitively?
+         give participants phyiscal/digital cards with different small topics and let them put them together by similarity; get the dissimilarity data
+         generative: respondents create own sets using any number of groupings
+             e.g. use to design websites
+         evaluative: the thing is already built, want to know how well it would do
+             fixed number/name of categories
+             e.g. see if the natigation makes sense to people
+         dengrogram is what you end up with
+         tools for digital: Optimal Workshop, UserZoom and UX Suite
+     Lab:
+         want to determine cause and effect
+         it's focused on a specific thing; hypothesis driven, expecting something specific and testing that; 
+         random assignment to one condition or another which helps balance out pre-existing differences between groups
+         addresses confounds and artifacts - those things unintentionally associated with different groups that could provide alternate explanations for the data
+         e.g web eye-tracking, medicine research, education, psychology (like a psycholinguistics lab lol)
+         cons:
+             extensive, specialized training
+             time- and labor-consuming
+             expensive
+             
+      A/B Testing:
+        pick one element and create multiple versions of it and randomly assign people to see one or the other and compare response rates then pick the better one to implement
+        metrics: time on page, mouse tracking, click-throughs, shopping cart value, abandonment
+        website optimization
+        constantly performing
+             
+        options: Optimizely, VWO
+        
+        statistical hypothesis testing but adjust the parameters to make sure it does it right
+      Surveys:
+          for this to be good, need to konw the topic and audience well enough to anticipate the answers
+          closed end - force choice, multiple choice
+          open end - same questions, write in
+          in-person - 
+          online
+              options: SurveyMonkey, Qualtrics, Google Forms, Typeform
+              (As a researcher, familiar with Qualtrics, & Google Forms; as a participant, SurveyMonkey)
+          pro: easy to setup and send out to large groups of people
+          con: 
+              hard to get questions right, 
+              can be ambiguous, loaded, double-barreled
+              responses can be misinterpreted, e.g. strongly disagree to "I never feel..."
+          careful of:
+              bias in question wording, response options and sample selection
+          
+
+
+Notes for me: learn API pulls and data scraping in R and Python... maybe add PHP?
+How to in Sheets (scraping): =IMPORTHTML("url", "table", table index #)

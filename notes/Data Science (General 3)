@@ -1,0 +1,200 @@
+Data Tools
+Applications:
+    Spreadsheets
+        everywhere
+        client's format
+        data transfer lingua franca is the CSV
+        easy to use
+        uses:
+            data browsing
+            sorting
+            rearrancing
+            finding and replacing
+            formatting
+            transposing
+            change tracking
+            pivot tables
+            arranging output
+        make tidy data: ultimately helps for transferring data
+            a column is a variable
+            a row is a case
+            one sheet per file
+            one level per file
+    Tableau (Public)
+        visualization
+        everything needed for a lot of people
+        plus it's drag and drop, point and click
+        can even forecast to some degree from the analytics tab
+        
+    SPSS: Statistical Package for the Social Sciences
+        IBM bought it around v16
+        expensive if not a student
+        dropdown menus and text based syntac
+        can be buggy and crash, so save often
+    JASP: Just Another Statistical Program (unclaimed by the creators lol)
+        SPSS but free and open source 
+        more intuitive
+        replicable analysis
+        bayesian approach
+        osf.io shareable
+    SAS: common, powerful, hard to use and expensive
+        university edition, runs in virtual machine so download is clunky
+        JMP: visualization software like Tableau, owned by SAS
+   Stata, Minitab, MATLAB (more mathematical), Mathematica, WolframAlpha (Mathematica)
+   Mining: RapidMiner, KNIME, Orange - control languages, drag onto screen and connect with lines
+   Machine Learning: BigML
+       browser based, runs on their servers, doesn't cost a lot
+   Free to download:
+       SOFA Statistics
+       Past 3 - palentolgical software
+       StatCrunch- basic stats and learning, like $6-12/y
+   XLStat - a add-in could purchase for additional statistical function
+   
+   Web data
+        HTML: know this, not making notes on this
+        CSS: appearance of the page
+        XML: semi-structured data, define the information the way you want
+            in the case of webdata: html is really a less free version of xml, tags are defined specifically in html but you can create whatever tags in xml
+            MS Offic files; e.g. .docx or .xslx
+            iTunes library; e.g. <genre/>
+            data files
+            convert easily to CSV and back or HTML to XML
+        JSON: 
+            semi-structure, etc, etc 
+            though not as long as XML 
+            generally taking XML's place
+            easy to convert too
+    
+Ok but which one?
+Consider the following:
+    Functionality: does it do what you want it to do? Run on your machine?
+    Ease: no point of having a thing you cannot use
+    Community: problems will come up, might have an answer available if there's support
+    Cost: free, minimal, moderate, prohibitively expensive if someone else isn't paying
+    80-20 rule: get good at using like 1-3 and stick to it
+
+Essentials:
+    R
+        language of data
+        free and open source
+        vector operations, no need to write for loops to get through a list
+        great, supportive community
+        7000+ packages
+        choice of interfaces:
+            IDE
+            Terminal
+            RStudio
+            Jupyter
+            All command line
+        a little weird but good people
+            specific style to itself
+            graphs in separate window; text and numbers in console; save output to files
+        packages to expand functionality
+        Sources of packages
+            CRAN - Comprehensive R Archive Network
+                task views: organized by topic; each comes with datasets, manual, vignettes
+            Crantastic!
+                links to CRAN
+                shows popularity and updates
+    Python
+        only general purpose language
+        great community
+        thousands of packages
+        versions: 2.x and 3.x; compatibility issues, many people use 2.x because packages are designed for this
+        Interfaces:
+            Python's IDLE
+            Terminal/IDE
+            Jupyter/IPython
+            Continuum Anaconda
+            Enthought Canopy
+            Command Line
+        Why Jupyter?
+            both text output and markdown
+            inline graphics
+            easy to prganize and present data
+        Packages:
+            PyPI
+            Scientific Computing, General: NumPy, SciPy 
+            Visualizations: Matplotlib, Seaborn
+            Statistical Analysis: Pandas
+            Machine Learning: scikit-learn
+    SQL
+        relational databases
+        structured data to export to analytical app of choice
+        RDBMS:
+            Pay to play:
+                Oracle
+                MS SQL Server
+            Free:
+                MySQL
+                PostgreSQL
+           minimize data redundancy
+           options to work with:
+               GUI: SQL Developer, SQL Server Management Studio, Toad
+               Text: any command line or IDE
+        basic commands:
+            SELECT
+            FROM
+            WHERE
+            ORDER BY           
+           
+
+Others:
+    C, C++, Java
+        bedrock of DS
+        C/C++
+            C: 60's
+            C++: 80's
+            wide use, fast, stable
+            can be used in R if speed is imperative
+        Java
+            based on C/C++
+            WORA: Write Once, Run Anywhere
+            most popular everywhere
+        Engineers and developers to deal with the inner workings/back-end of DS
+        Analyst - usually don't
+    Bash
+        old but still used
+        many varieties, Mac/Linux = Bash, Windows = Powershell, etc
+        $ prompt
+        one line at a time
+        run scripts: get more elaborate code done, write to a text file to run it
+        command line utilities to accomplish things
+            built-ins:
+                cat: concatenate
+                awk - text processing
+                grep - global search with a regular expression and print (searching)
+                sed - stream editor (transform text)
+                head pr tail - first or last ten lines of doc
+                sort and uniq
+                wc - word count
+                printf - formats console output
+             installables:
+                jq - pulling in json
+                json2csv - convert
+                Rio - run commands from R in bash
+                BigMLer - allow run BigML to run from command line       
+            
+    REGEX
+        looks cryptic and lowkey a language of its own lol
+        ^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$ <- describing a valid email
+        that is, 
+            ^ - beginning of string
+            can be any letter, number, with wildcards and multiple occurrences (._%+-) +
+            must have an @ character which is followed by any letter, number +
+            \ - escape because need to look for a .
+            any letters but there must be at least 2 characters
+            $ - ending of string
+        pattern matching
+            can be very specific and general
+        elements:
+            literals
+            metacharacters: representations of an idea, e.g. % - wildcard of any length
+            escape sequences: indicating that it's not a metacharacter, want the literal
+            search expression: the expression you make
+            target string: what you're searching through
+            
+        regex golf to practice
+
+
+80/20 Rule (Pareto Principle): 80% of output from 20% of tools, focus on the tools that would be most productive for you instead of doing a little of everything

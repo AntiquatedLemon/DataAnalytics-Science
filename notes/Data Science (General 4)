@@ -1,0 +1,118 @@
+Math
+which procedures to use and why
+know what to do when things dont work right
+some are easier and quicker by hand
+
+Algebra, Linear (matrix) algebra, systems of equations
+Calculus, Big O, Probability, Bayes
+
+Foundational:
+    no notes for me, learned this
+    though might want to break my linear algebra book back out for a quick review
+
+Calculus:
+    Why?
+        basis of a lot of calculations
+            least squares regression
+            probability distributions
+        changes over time
+        min/max of functions in optimizing
+    Types
+        differential (rates of change at specific time)
+        integral (given rate of change, quantity at specific time)
+    Example: optimize sales and revenue
+
+Big O:
+    rate of growth for calculation as the number of elements grows
+    functions vary in speed, and can be inconsistent
+    just be aware of the demands
+    
+Probability:
+    what are the odds
+    range 0-1
+    conditional probability P(A|B): probability of A, given B is true
+    Type I and II errors in hypothesis testing
+    Bayes
+
+Statistics:
+    Descriptive: 
+    Inferential: 
+    Hypothesis testing:
+    Estimation: 
+    
+    Choices:
+        estimators
+        measures of fit
+        feature selection
+        common problems
+        model validation
+        
+Exploratory Approach:
+    Graphical - use graphs to get best overaall impression
+        bar charts, histograms, scatterplots
+        why graphical first?
+            get a feel for the data
+            check assumptions, ensure that it matches the requirements for the procedure
+            check for anomalies, outliers, unusual distributions, errors
+            unusual elements might need a deeper analysis or different angle 
+        options to do so
+            code based: R, Python, JavaScript (d3.js)
+            apps: Tableau, Qlik, Excel
+            hand: John Tukey, father of EDA
+        Distributions:
+            Univariate:
+                bar chart: 
+                    categories
+                    easy to read
+                    descending
+                    horizontal (makes labels easier to read)
+                box plot: 
+                    quantitative vairables
+                    show quartile values and outliers
+                    many variables side by side if the scales are roughly similar
+                histogram: 
+                    quantitative
+                    shape of distribution
+                    compare many
+             Bivariate:
+                 group bar charts or box plots: 
+                     see association of category and outcome
+                 scatterplot: 
+                     two quantitative variables
+                     see linearity, outliers
+                     strength of association     
+             Multivariate:
+                 3D graph?
+                     no lol, these are difficult to read and hurts my eyes
+                     need to be in motion
+                     might be useful for seeing 3D clustering
+                 instead: matrix of graphs
+                     many quantitative variables
+                     use markers for groups
+                     clearer than 3D
+            
+    Numerical - greater precision, try variations of data and methods
+        transform data, empirical estimates, robust methods
+        https://youtu.be/ua-CiDNNj30?si=PeQGUODc7WHFhNEm&t=17952
+        Robust Statistics:
+            stable estimates - roughly the same despite the inflections
+            less affected by outliers, skewness, kurtosis, etc
+        Resampling:
+        
+        Transforming: 
+        
+                  
+             
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        
