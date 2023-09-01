@@ -1,0 +1,46 @@
+Categories and their explanations:
+- No Need at All
+    exactly as stated
+    technologies: R, SQL, Python, Excel, Tableau
+- Fast Fill In/Up
+    known by "this isn't hard, I still remember this with relatively certainty)
+    could also just not take that long to learn as it's not complex
+- Brush Up A
+    known by needing only really a conceptual review to remind myself of how things work
+- Brush Up B
+    BUA + coding as well, memory is a little lacking but may come back to me quickly
+- Understood, Never Coded
+    conceptually there but I have never personally coded
+    will take a lot more effort on my part to learn the syntax for it
+- I'm sorry, huh?
+    pardon my ignorance but what did you just say to me? (read: I don't know this at all)
+    
+    
+    
+No Need at all
+    algebra
+    systems of equations
+Fast Fill In/Up
+    general stats
+    REGEX
+    learn API pulls and data scraping in R and Python
+    running scripts
+    pros and cons of R or Python for projects (just for my own edification)
+Brush Up A
+    linear algebra
+        thoughts: probably not too bad since I still remembered how to do some simpler ones
+    calculus
+        thoughts:
+            linear algebra coincided with calc 3 for me so assume I need to go that far
+            but just speed through from calc 1 to 3 to be very sure I got it
+Brush Up B
+    - estimators, measures of fit, feature selection, validation techniques
+Understood, Never Coded
+- time series analysis
+I'm sorry, huh?
+
+Consider Learning:
+- technologies: RapidMiner, KNIME, Hadoop, SAS, Spark? ... maybe add PHP?
+
+
+General Goal:if I can do it in one of my main 3 (R, Python, Excel), I want to be able to do it in the other two, even if it is rather difficult

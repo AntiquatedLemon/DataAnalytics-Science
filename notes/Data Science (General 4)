@@ -6,10 +6,6 @@ some are easier and quicker by hand
 Algebra, Linear (matrix) algebra, systems of equations
 Calculus, Big O, Probability, Bayes
 
-Foundational:
-    no notes for me, learned this
-    though might want to break my linear algebra book back out for a quick review
-
 Calculus:
     Why?
         basis of a lot of calculations
@@ -21,7 +17,7 @@ Calculus:
         differential (rates of change at specific time)
         integral (given rate of change, quantity at specific time)
     Example: optimize sales and revenue
-
+    
 Big O:
     rate of growth for calculation as the number of elements grows
     functions vary in speed, and can be inconsistent
@@ -35,17 +31,219 @@ Probability:
     Bayes
 
 Statistics:
-    Descriptive: 
+    Descriptive:
+        if desc as a...
+        single number: center
+            mode: easy but may not be close to center of data
+            median: two same sized groups, difficult to use after
+            mean: affected by outliers/skewedness, most useful though
+        second number: spread
+            range: max - min
+                thrown by outliers though
+            percentiles, interquartile range: 3rd quartile score - 1st quartile score
+                interpolation for the gap, different methods do so differently though
+                good for skewed data since it ignores the extremes
+            variance: 
+                sum of the distance of each score from the mean squared/count of scores;
+                avg squared deviation from the mean
+                affected by outliers
+                most useful because feed into other procedures
+            standard deviation: sqrt(variance)
+                formulas can be different for populations and samples
+                will be similar though if the pop/sample is big enough
+                affected by outliers
+                most useful because feed into other procedures
+        third number: shape
+            symetrical: same on the left and right
+            skewed: the data exists mostly on one side; looks like it has a tail
+            unimodal: one mode, one maximum in the data
+            bimodal: two modes, two maximums in the data, two distributions in the data
+            uniform: every response is equally common
+            U: the outer responses are more common
+            outliers
+            context of center and spread
     Inferential: 
-    Hypothesis testing:
-    Estimation: 
-    
-    Choices:
-        estimators
-        measures of fit
-        feature selection
-        common problems
-        model validation
+    Hypothesis testing: test the theory
+        start with a question
+            e.g. what is the probability of X by chance if randomness is the only explanation?
+        response: if probability is low, reject randomness as a likely explanation
+        scientific research
+        go/no go or yes/no decision
+            medical diagnostics
+            purchasing for a school district
+        H0 - null hypothesis, no systematic effect and random sampling error is the only explanation
+        HA - alternative hypothesis, systematic effect
+        null distribution, bell-curve, most normal
+        false positive, 
+            shows effect when actually random
+            conditional on rejecting null
+            called a Type I error
+            pick a value 5% risk if rejected is the most common value
+        false negative
+            shows no effect when actually systematic
+            conditional on not rejecting null
+            Type II error
+            calculated value
+        issues:
+            easy to misinterpret it - getting something that correlated may not actually be meaningful due to things like samples size, etc
+            assumption of null or nil effect
+            some cutoffs create bias - that is, maybe a different cut off would yield a diferrent result
+            wrong question - don't want to know about the likelihood of getting this data at random, want it the other way
+        
+    Estimation:
+        give a number
+        estimate for the thing
+        confidence intervals, so focus on likely values
+        still inferential
+        most are related to hypothesis testing
+        can estimate any sample statistic
+        parametric methods:
+        bootstrap methods: random sample of the data to get a feel for variability
+        also central v non-central confidence intervals of estimation; here and now
+        
+        choose CL, 95% is most common
+        the higher you want it, the wider the range
+        this is a trade off between accuracy and precision
+            Accurate: contain the true population value, -> correct inference
+            Precise: narrow, small value range
+            these are independent of each other 
+            visual of the thing: https://wp.stolaf.edu/it/gis-precision-accuracy/
+        either way, need to interpret these
+        sample result sentences:
+            little interpretation: The 95% CI for the mean is 5.8 to 7.2
+            colloquial version: There is a 95% chance that the pop mean is between 5.8 and 7.2 
+                (a frequentist will not appreciate this since it implies that the pop mean shifts)
+            better: 95% of CIs for randomly selected samples will contain the pop mean
+        CL: higher CL means wider intervals to cover your bases
+        SD: larer SD also create wider intervals
+        n: the sample size, larger means narrower since more observations increase precision and reliability
+        CL:
+            focus on the pop parameter 
+            the variation is explicitly stated in the estimation
+            overall more informative since tells if the pop value is likely and includes variability of the data
+                
+         
+    Choices: what measuring stick are you going to use?
+        estimators:
+            Ordinary Least Squares (OLS)
+                common
+                based on sum of squared errors
+                characterized by best linear unbiased estimator (BLUE)
+                e.g. scatterplot with a regression line through it
+                    regression line should be, in this case, BLUE
+                    drawn through use of the residuals: 
+                        distance from that point to the line is the residual
+                        square those and add them up
+                    the line will have the smallest sum of squared residuals of any straight line you can run through the data
+             Maximum Likelihood (ML):
+                 choose parameters that make the observed data most likely
+                 local search, not necessarily the best 
+                 change the means or change SD or both
+             Maximum a posteriori (MAP):
+                 Bayesian approach
+                 add prior distribution
+                     stronger of these exert more influence on the estimate
+                         could be larger sample or more extreme values
+                     greater influence on the posterior estimate
+                 anchor and adjust
+             Relation to each other:
+                 OLS = ML with normally distributed errors
+                 ML = MAP with a uniform prior distribution
+                 OLS is a special case of ML, which is a special case of MAP
+             standards affect choices
+             several methods exist
+             many are closely related, may even be identical
+                 
+        measures of fit: correspondence between data had and model created
+            How close is close enough?
+            R^2
+                coefficient of determination, squared multiple correlation
+                compares the variance of Y to the residuals on Y
+                range 0-1, higher = better
+                variation:
+                    adjusted R^2, considers the number of variables
+            -2LL (-1 Log Likelihood)
+                likelihood ratio
+                compares fit of nested models (subset, larger subset and the set overall)
+                used a lot of logistic regression
+                smaller = better
+                variation: adjusts for the number of predictors, don't want to overfit
+                    akaike information criterion (AIC)
+                    bayesian information criterion (BIC)
+            X^2
+                chi-square
+                examine deviations between two datasets (observed and expected values)
+                for the model created, expect this many frequencies in this category
+        feature selection: trying to get what matters the most
+            goal:
+                select the best features
+                remove noisy, uninformative variables
+                simplify the models
+                avoid overfitting
+            major problem: 
+                multicollinearity: the predictors overlap with one another
+                    issue because considering the same thing 2+x and  
+                common resolutions:
+                    probability values (p-values) and regression equations
+                        simplest method, often done for you
+                        look at p-valuesfor each predictor
+                        star search 
+                        problem: looking at them individually, inflates false positives
+                    standardized regression coefficients (aka betas)
+                        slightly better
+                        puts all variables on same scale, 0 to -1/+1 with SD of 1
+                        still in same context of each other
+                            predictor values still only valid when taken as a whole
+                    sequential regression
+                        stepwise procedures
+                        enter variables in blocks and examine change in fit at each step
+                        increase risk of overfitting
+                newer:
+                    commonality analysis
+                        provides separate estimates for unique and shared contributions
+                        just moves the problem of disentanglement to the analyst 
+                    dominance analysis
+                        compares every possible subset of predictors
+                        issue: combinatorial explosion
+                            even just 50 variables has over 1 quadrillion combinations,
+                            too much work
+                            hard to do standard errors and perform inferential stats here
+                    relative importance weights
+                        create sets of orthogonal predictors then
+                            (that which are uncorrelated to one another, basing off OG)
+                        predicts scores then
+                        predict outcome without multicollinearity then
+                        rescale coefficients back to the OG vars (back-transform) then
+                        assign relative importance as % of explanatory power for each variables
+                        has similar results to dominance analysis
+        model validation: 
+            are we on target, will it work well with other data
+            generalizability or scalability
+            approaches:
+                Bayes
+                    posterior probabilities
+                    get p(H|D) instead of p(D|H) [hypothesis given data]
+                    use Bayes' theorem
+                Replication
+                    exact v conceptual replications
+                    do the study again
+                    combine the results
+                    the first study can be the bayesian prior probability for the second
+                    so meta-analysis or bayesian methods
+                Holdout
+                    model built on one part of the data then tested on another part
+                    requires a large sample to be able to do this
+                    used in competitions
+                Cross-validation 
+                    same data for training and testing
+                    not using all the data at once, cycling through the data
+                    Leave-One-Out (LOO): leave out one case at a time
+                    Leave-p-out (LpO): leave out a certain number at each point
+                    k-fold: 
+                        split into a number of groups
+                        leave out one then develop it on the others in that group
+                        cycle through the groups
+                    repeated random subsampling: use a random process at each point
         
 Exploratory Approach:
     Graphical - use graphs to get best overaall impression
@@ -95,24 +293,32 @@ Exploratory Approach:
         transform data, empirical estimates, robust methods
         https://youtu.be/ua-CiDNNj30?si=PeQGUODc7WHFhNEm&t=17952
         Robust Statistics:
+            class of statistics
             stable estimates - roughly the same despite the inflections
             less affected by outliers, skewness, kurtosis, etc
+            e.g. Trimmed Mean (take a percentage from the top and bottom and toss it then mean) 
+            e.g. Winsorized Mean (replace the smallest and largest values with next closest non outlying score)
         Resampling:
+            empirical estimate of sampling variability
+            called jackknife, bootsrtap permutation
+            key to process of cross-validation
         
         Transforming: 
-        
+            smooth functions, preserve order
+            allows to work on full dataset
+            fix skewed data
+            fix curved lines (e.g. like one in scatter plot)
+            Tukey's ladder of powers
+                3     ||      x^3
+                2     ||      x^2
+                1     ||      x^
+                1/2   ||      sqrt(x)
+                0     ||      ln(x)
+                -1/2  ||      -1/sqrt(x)
+                -2    ||      -1/x
+                -3    ||      -1/(x^2)
+            push the distribution down or up (by how the numbers are written)
+            get multiple perspectives
+            check stability
+            set the stage for modeling
                   
-             
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-        

@@ -155,6 +155,4 @@ Methods for creating new, custom data
               bias in question wording, response options and sample selection
           
 
-
-Notes for me: learn API pulls and data scraping in R and Python... maybe add PHP?
 How to in Sheets (scraping): =IMPORTHTML("url", "table", table index #)

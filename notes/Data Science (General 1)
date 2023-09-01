@@ -67,7 +67,7 @@ Details: feature selection, problems, validation, estimators, fit
 
 Machine Learning:
 reduce dimensionality - find most essential portions of the data
-clustering, k-means, anamolies
+clustering, k-means, anomalies
 - Logistic Regression
 - kNN
 - Naive Bayes
@@ -151,10 +151,3 @@ Extract by import.io
 Others:
 Kaggle for competitions and compare to others
 DataKind.org work with local non-profits to help out
-
-
-Notes for me:
-- review REGEX, it's been a while for me
-- time series analysis as a skill
-- Known: R, SQL, Python, Excel, Tableau
-- Potential investment: RapidMiner, KNIME, Hadoop, SAS, Spark?
