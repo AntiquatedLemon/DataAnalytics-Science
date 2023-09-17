@@ -12,12 +12,17 @@ head(mtcars)
 
 # BAR CHARTS ###############################################
 
-barplot(mtcars$cyl)             # Doesn't work
+barplot(mtcars$cyl)             
+# Doesn't work - going through the each case and telling us how many cylinders in each case
 
+# Reform to summary table, same for excel and sheets
 # Need a table with frequencies for each category
 cylinders <- table(mtcars$cyl)  # Create table
-barplot(cylinders)              # Bar chart
-plot(cylinders)                 # Default X-Y plot (lines)
+barplot(cylinders)
+#now showing the frequency of 4, 6 and 8 cylinders
+
+plot(cylinders)
+# Default X-Y plot (lines), same thing but the using lines so it's thinner than desired for visual clarity
 
 # CLEAN UP #################################################
 

@@ -1,0 +1,113 @@
+Intro to Data Lakehouse
+
+History:businesses needed more than just relational databases
+
+pro: external data + operational data -> ETL -> data warehouse -> BI and reports
+- business intelligence
+- analytics
+- structured and clean data
+- predefined schemes
+
+cons:
+- no support for semi- / unstructured data, expensive to store/analyze/manage data not fitting schema
+- inflexible schemas
+- struggled with volume, variety and velocity upticks (technology advancing to take in more)
+- long processing time
+
+Big Data -> Data Lakes
+Pros:
+- flexible data stroage
+- streaming support
+- cost efficient in the cloyd
+- support for AI and ML
+Cons:
+- no transactional support
+- poor data reliability, can't enforce quality, mostly because formats
+- slow analysis performance, timeliness of decision impacting results
+- data governance concerns
+    remember this one personally, 
+    where something is stored can be a very contentious element, 
+    might have to make special arrangements that certain data is to be hosted in xyz region
+    security and privacy enforcement
+- data warehouses still needed
+
+businesses now needed two disparate incompatible data platforms
+cons:
+- complex and delayed
+- copying between and back through system
+- store the same info twice
+
+solution? Data lakehouse
+data warehouse + delta lake
+[all ml, sql, bi, and streaming use case; security and governance approach for all data assets on all clouds; open and reliable for all data types]
+
+Key features
+Transaction Support
+Schema enforcement and governance (integrity and auditing)
+Data governance (privacy regulation and data use metrics)
+BI support (reduce latency between obtaining and insights)
+Decoupled storage from compute (on own clusters, scale independently according to need)
+Open storage formats (variety of of tools can access directly and efficiently, apache parquet)
+Support for diverse data types
+Support for diverse workloads
+End-to-end streaming
+
+may want to read later "Lakehouse: A New Generation of Open Platforms that Unify Data Warehousing and Advanced Analytics. M. Armbrust, A. Ghodsi, R. Xin, M. Zaharia. 11th Annual Conference on Innovative Data Systems Research (CIDR '21), January 11-15, 2021, Online.
+
+cloud agnostic, governed wherever it is stored
+realized on databricks lakehouse 
+- foundation: delta lake (data reliability and performance)
+- unity catalog (fine grained governance for data and AI)
+- persona-based use cases: for all data team members
+instant and serverless compute for the customer
+
+Concerns around lake:
+lack important features for quality and reliability
+not as good as warehouses sometimes
+data
+- lack of acid txn support
+- lack of schema enforcement
+- lack of integration with data catalog, dark data, no single source of truth
+performance
+- ineffective partitioning, poor man's indexing, storage in immutable files
+- too many small files
+
+delta lake fixes these concerns in a lot of ways,
+file-based open source storage formats
+acid txn guarantees
+- no partial or corrupted
+scalable data and metadata handling
+- spark to scale out all metadata processing for petabyte scale tables
+audit history and time travel
+- txn log with details of changes, full audit trail
+- ability to revert to earlier versions for roll backs
+- reproduce experiments
+schema enforcement and evolution
+- prevent insertion of data with wrong schema
+- can explicitly and safely change the schema to support changes
+support delete, updates and merges
+- change data capture, changing dimension operations, streaming upserts
+unified streaming and batch data processing
+- work across variety of data latencies
+
+multiple clouds, multiple partners to work across systems
+
+photon fixes query engine concerns
+execution engine needs data warehouse performance but data lake scalability
+compatible with spark apis, with support
+increase of use-cases
+
+unified governance and security importance
+more individual access points added to a system, like users, groups or external connectors, higher risk of data breaches at those points
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,11 @@
 # File:   OverlayingPlots.R
 # Course: R: An Introduction (with RStudio)
 
+# why? increased information density, same space and time but more
+# don't want to go too dense, personally no more than 3
+# views should complement and support each other
+# just because it can be done, doesn't mean should so careful
+
 # INSTALL AND LOAD PACKAGES ################################
 
 library(datasets)  # Load/unload base packages manually
@@ -8,22 +13,30 @@ library(datasets)  # Load/unload base packages manually
 # LOAD DATA ################################################
 
 # Annual Canadian Lynx trappings 1821-1934
+# information on the Lynx data set
 ?lynx
 head(lynx)
+# a time series, need to know that it starts at 1831 and continues
+#measured in thousands
+# don't know what years those were but
+# know that a lot of out data is at the lower end
 
 # HISTOGRAM ################################################
 
 # Default
 hist(lynx)
+# no variable specification as there is only one
 
 # Add some options
 hist(lynx,
      breaks = 14,          # "Suggests" 14 bins
-     freq   = FALSE,       # Axis shows density, not freq.
-     col    = "thistle1",  # Color for histogram
+     freq   = FALSE,       # Axis shows density, not freq.; proportions instead of counts
+     col    = "thistle1",  # can use color name instead too!
      main   = paste("Histogram of Annual Canadian Lynx",
                     "Trappings, 1821-1934"),
      xlab   = "Number of Lynx Trapped")
+# paste command to spread command across 2 lines but put on one line
+# 
 
 # Add a normal distribution
 curve(dnorm(x, mean = mean(lynx), sd = sd(lynx)),
